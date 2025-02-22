@@ -27,17 +27,6 @@ const Quiz = () => {
     }
   }, [timer]);
 
-  // const handleAnswer = (selectedAnswer) => {
-  //   if (questions[currentQuestion].type == "multiple-choice") {
-  //     if (selectedAnswer) setScore(score + 1);
-  //   } else {
-  //     if (parseInt(userAnswer) === questions[currentQuestion].answer) {
-  //       setScore(score + 1);
-  //     }
-  //   }
-  //   handleNextQuestion();
-  // };
-
   const handleAnswer = (selectedAnswer) => {
     if (questions[currentQuestion].type === "multiple-choice") {
       if (selectedAnswer === questions[currentQuestion].answer) {
