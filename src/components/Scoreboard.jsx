@@ -11,7 +11,7 @@ const Scoreboard = ({ score, total }) => {
   console.log("Score passed to Scoreboard:", score, total);
   // Load scores from MongoDB
   useEffect(() => {
-    axios.get(`http://localhost:9000/api/scores/${user.email}`)
+    axios.get(`https://quiz-platform-server.vercel.app/api/scores/${user.email}`)
       .then((res) => setScoreHistory(res.data))
       .catch((err) => console.error("Error fetching scores:", err));
   }, []);
@@ -22,7 +22,7 @@ const Scoreboard = ({ score, total }) => {
       console.log(user); // Check if user object contains email
       const newScore = { score,total, email: user.email, date: new Date().toISOString() };
   
-      axios.post("http://localhost:9000/api/scores", newScore)
+      axios.post("https://quiz-platform-server.vercel.app/api/scores", newScore)
         .then(() => {
           setScoreHistory((prev) => [newScore, ...prev]);
         })

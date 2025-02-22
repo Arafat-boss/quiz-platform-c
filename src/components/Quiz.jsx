@@ -13,7 +13,7 @@ const Quiz = () => {
   console.log("Correct answers count:", currentQuestion);
   console.log("Score before setting state:", score);
   useEffect(() => {
-    fetch("http://localhost:9000/api/quizzes")
+    fetch("https://quiz-platform-server.vercel.app/api/quizzes")
       .then((res) => res.json())
       .then((data) => setQuestions(data));
   }, []);
